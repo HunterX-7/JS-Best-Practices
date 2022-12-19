@@ -11,7 +11,6 @@ const button = document.getElementById('btn');
 
 const addToDo = () => {
   const task = addToList.value;
-
   todos.push({
     description: task,
     completed: false,
@@ -51,19 +50,10 @@ const displayToDo = () => {
 
 const checkToDo = (todoId) => {
   todos = todos.map((todo, index) => {
-    if (index === todoId) {
       return {
-        description: todo.description,
-        completed: !todo.completed,
-        index: todo.index,
+        ...todo,
+        completed: index === todoId ? !todo.completed : todo.completed
       };
-    }
-
-    return {
-      description: todo.description,
-      completed: todo.completed,
-      index: todo.index,
-    };
   });
   displayToDo();
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -127,7 +117,6 @@ table.addEventListener('click', (e) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
   addToDo();
   displayToDo();
   localStorage.setItem('todos', JSON.stringify(todos));
