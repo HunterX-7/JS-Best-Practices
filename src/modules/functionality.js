@@ -49,12 +49,10 @@ const displayToDo = () => {
 // Check To Do
 
 const checkToDo = (todoId) => {
-  todos = todos.map((todo, index) => {
-      return {
-        ...todo,
-        completed: index === todoId ? !todo.completed : todo.completed
-      };
-  });
+  todos = todos.map((todo, index) => ({
+    ...todo,
+    completed: index === todoId ? !todo.completed : todo.completed,
+  }));
   displayToDo();
   localStorage.setItem('todos', JSON.stringify(todos));
 };
