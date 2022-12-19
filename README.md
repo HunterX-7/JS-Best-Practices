@@ -46,7 +46,7 @@
 
 ### 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link](https://hunterx-7.github.io/To-Do-List/)
+[Live Demo Link](https://hunterx-7.github.io/JS-Best-Practices/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
